@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <v-btn small depressed color="#033" >
+    <v-btn depressed color="#DC4C3F" >
       Ok
     </v-btn>
   </div>
