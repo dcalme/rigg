@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Add SVG Icons
+Add your svg file(s) to svg-icons/
+run 
+```
+
+npm run generate-icons
+```
