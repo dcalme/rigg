@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Vaisselle",
+      "name": "dish",
+      "filename": "dish.png"
+    },
+    {
+      "id": 2,
+      "title": "Aspirateur",
+      "name": "vacuum",
+      "filename": "vacuum.png"
+    },
+    {
+      "id": 3,
+      "title": "Cartons",
+      "name": "cardboard",
+      "filename": "cardboard.png"
+    },
+    {
+      "id": 4,
+      "title": "Course",
+      "name": "food_shopping",
+      "filename": "food_shopping.png"
+    },
+    {
+      "id": 5,
+      "title": "A Emporter",
+      "name": "take_away",
+      "filename": "take_away.png"
+    },
+    {
+      "id": 6,
+      "title": "Gateau",
+      "name": "cake",
+      "filename": "cake.png"
+    },
+    {
+      "id": 7,
+      "title": "Linge",
+      "name": "laundry",
+      "filename": "laundry.png"
+    },
+    {
+      "id": 8,
+      "title": "Poubelles",
+      "name": "trash",
+      "filename": "trash.png"
+    },
+    {
+      "id": 9,
+      "title": "Poussières",
+      "name": "dust",
+      "filename": "dust.png"
+    },
+    {
+      "id": 10,
+      "title": "Partie Commune",
+      "name": "building",
+      "filename": "building.png"
+    },
+    {
+      "id": 11,
+      "title": "Salle de Bain",
+      "name": "bathroom",
+      "filename": "bathroom.png"
+    },
+    {
+      "id": 12,
+      "title": "Serpillère",
+      "name": "serpilliere",
+      "filename": "serpilliere.png"
+    },
+    {
+      "id": 13,
+      "title": "Toilettes",
+      "name": "toilet",
+      "filename": "toilet.png"
+    },
+    {
+      "id": 14,
+      "title": "Verre",
+      "name": "glass",
+      "filename": "glass.png"
+    },
+    {
+      "id": 15,
+      "title": "Cuisine",
+      "name": "cooking",
+      "filename": "cooking.png"
+    }
+  ]
+}
