@@ -25,8 +25,4 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-
-#container {
-  width: 100%;
-}
 </style>

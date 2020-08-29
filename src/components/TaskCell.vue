@@ -46,7 +46,6 @@ export default {
   methods: {
     toggleIsClicked() {
       this.isClicked = !this.isClicked;
-      console.log(this.isClicked);
     },
   },
 };
@@ -58,7 +57,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 #rounded-card {
@@ -66,18 +64,16 @@ export default {
   border: 1px solid black;
 }
 
-.iconbutton {
-  margin-top: 12px;
-  /* color: inherit; */
-}
-
 #rounded-card:hover {
   background-color: #EEEEEE;
+}
+
+.iconbutton {
+  margin-top: 12px;
 }
 
 .title {
   margin-top: 10px;
   font-variant-caps: small-caps;
-  }
-
+}
 </style>
