@@ -1,14 +1,26 @@
 <template>
   <div class="button">
-    <v-btn depressed color="#DC4C3F" >
-      Ok
-    </v-btn>
+    <div>
+      <v-btn raised large :disabled="!isActive">Valider</v-btn>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'SubmitButton',
+  props: {
+    isActive: Boolean,
+  },
+  data() {
+    return {
+    };
+  },
+  methods: {
+    toggleIsActive() {
+      this.isActive = !this.isActive;
+    },
+  },
 };
 </script>
 
