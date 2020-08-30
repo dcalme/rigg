@@ -3,10 +3,11 @@
       <TaskCell
         v-for="item in items"
         :key="item.id"
-        v-on:display-drawer="collect = true"
         :path="item.filename"
         :title="item.title"
         :name="item.name"
+        :add="addTasks"
+        :remove="removeTasks"
       />
   </div>
 </template>
@@ -20,10 +21,31 @@ export default {
   components: {
     TaskCell,
   },
+  props: {
+    update: {
+      type: Function,
+    },
+  },
   data() {
     return {
       items: items.tasks,
+      tasks: [],
     };
+  },
+  methods: {
+    addTasks(element) {
+      this.tasks.push(element);
+      this.update(this.tasks);
+      this.$nextTick(() => {
+        this.update(this.tasks);
+      });
+    },
+    removeTasks(element) {
+      this.tasks = this.tasks.filter((e) => e !== element);
+      this.$nextTick(() => {
+        this.update(this.tasks);
+      });
+    },
   },
 };
 </script>

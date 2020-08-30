@@ -1,7 +1,7 @@
 <template>
   <div class="nav_container">
     <v-app-bar prominent class="navbar">
-      <SubmitButton class="submit_button"/>
+      <SubmitButton class="submit_button" :submitCall="submitCall" :canSubmit="canSubmit"/>
     </v-app-bar>
   </div>
 </template>
@@ -12,7 +12,8 @@ import SubmitButton from './SubmitButton.vue';
 export default {
   name: 'NavBar',
   props: {
-    msg: String,
+    submitCall: Function,
+    canSubmit: Boolean,
   },
   components: {
     SubmitButton,

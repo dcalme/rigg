@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <NavBar/>
-    <TaskGrid/>
+    <NavBar :submitCall="submit" :canSubmit="this.tasks.length === 0 ? false : true"/>
+    <TaskGrid :update="updateTask"/>
+
   </div>
 </template>
 
@@ -14,6 +15,19 @@ export default {
   components: {
     NavBar,
     TaskGrid,
+  },
+  data() {
+    return {
+      tasks: [],
+    };
+  },
+  methods: {
+    updateTask(element) {
+      this.tasks = element;
+    },
+    submit() {
+      alert(this.tasks);
+    },
   },
 };
 </script>

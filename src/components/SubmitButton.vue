@@ -1,7 +1,14 @@
 <template>
   <div class="button">
     <div>
-      <v-btn raised large :disabled="!isActive">Valider</v-btn>
+      <v-btn
+        raised
+        large
+        :disabled="!canSubmit"
+        v-on:click="submitCall"
+      >
+        Valider
+      </v-btn>
     </div>
   </div>
 </template>
@@ -10,16 +17,12 @@
 export default {
   name: 'SubmitButton',
   props: {
-    isActive: Boolean,
+    canSubmit: Boolean,
+    submitCall: Function,
   },
   data() {
     return {
     };
-  },
-  methods: {
-    toggleIsActive() {
-      this.isActive = !this.isActive;
-    },
   },
 };
 </script>

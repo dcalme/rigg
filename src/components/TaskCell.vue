@@ -11,7 +11,7 @@
             id="rounded-card"
             :style="isClicked ? { 'background-color': '#969696' } : null"
           >
-            <div v-on:click="$emit('display-drawer'), toggleIsClicked()">
+            <div v-on:click="toggleIsClicked">
               <img
                 v-bind:src="require(`../assets/${path}`)"
                 class="iconbutton"
@@ -37,6 +37,12 @@ export default {
     name: String,
     path: String,
     title: String,
+    add: {
+      type: Function,
+    },
+    remove: {
+      type: Function,
+    },
   },
   data() {
     return {
@@ -45,7 +51,13 @@ export default {
   },
   methods: {
     toggleIsClicked() {
-      this.isClicked = !this.isClicked;
+      if (this.isClicked) {
+        this.isClicked = false;
+        this.remove(this.name);
+      } else {
+        this.isClicked = !this.isClicked;
+        this.add(this.name);
+      }
     },
   },
 };
