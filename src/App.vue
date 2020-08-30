@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <NavBar :submitCall="submit" :canSubmit="this.tasks.length === 0 ? false : true"/>
-    <TaskGrid :update="updateTask"/>
-
+    <NavBar
+      :submitCall="submit"
+      :canSubmit="this.tasks.length === 0 ? false : true"
+    />
+    <TaskGrid
+      :update="updateTask"
+      class="task_grid"
+    />
   </div>
 </template>
 
@@ -38,5 +43,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+.task_grid {
+  padding-top: 120px;
 }
 </style>

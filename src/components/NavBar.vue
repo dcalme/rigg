@@ -1,7 +1,15 @@
 <template>
   <div class="nav_container">
-    <v-app-bar prominent class="navbar">
-      <SubmitButton class="submit_button" :submitCall="submitCall" :canSubmit="canSubmit"/>
+    <v-app-bar
+      prominent
+      fixed
+      class="navbar"
+    >
+      <SubmitButton
+        class="submit_button"
+        :submitCall="submitCall"
+        :canSubmit="canSubmit"
+      />
     </v-app-bar>
   </div>
 </template>
