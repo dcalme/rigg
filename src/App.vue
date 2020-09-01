@@ -4,7 +4,7 @@
       :submitCall="submit"
       :canSubmit="this.tasks.length === 0 ? false : true"
     />
-    <TaskGrid
+    <router-view
       :update="updateTask"
       class="task_grid"
     />
@@ -13,13 +13,11 @@
 
 <script>
 import NavBar from './components/NavBar.vue';
-import TaskGrid from './components/TaskGrid.vue';
 
 export default {
   name: 'App',
   components: {
     NavBar,
-    TaskGrid,
   },
   data() {
     return {
