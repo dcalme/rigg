@@ -74,6 +74,7 @@ export default {
 #rounded-card {
   border-radius: 50%;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 #rounded-card:hover {
