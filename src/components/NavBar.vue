@@ -44,11 +44,11 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  color: rgba(150, 150, 150, 0.8);
+  color: #d2d2d2;
 }
 
 a:hover {
-  color: #D3D3D3;
+  color: #ffffff;
 }
 .navbar {
   background: rgb(140,71,76);
@@ -61,22 +61,23 @@ a:hover {
 }
 
 .headers {
-  margin-top: 70px;
+  margin-top: 80px;
   margin-left: 50px;
 }
 
 .header {
-  color: rgba(150, 150, 150, 0.8);
-  margin-right: 10px;
   font-size: 20px;
-}
-.header:hover {
-  color: #D3D3D3;
+  border-right: 1px solid #958889;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-variant-caps: small-caps;
+  font-weight: bold;
 }
 
 .home {
   margin-top: 40px;
 }
+
 .home_title {
   color: #D3D3D3;
 }
