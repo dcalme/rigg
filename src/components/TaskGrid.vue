@@ -1,4 +1,8 @@
 <template>
+<div>
+  <div class="date">
+    <DateDisplay/>
+  </div>
   <div class="grid">
       <TaskCell
         v-for="item in items"
@@ -10,16 +14,19 @@
         :remove="removeTasks"
       />
   </div>
+</div>
 </template>
 
 <script>
 import TaskCell from './TaskCell.vue';
+import DateDisplay from './DateDisplay.vue';
 import items from '../../tasks.json';
 
 export default {
   name: 'TaskGrid',
   components: {
     TaskCell,
+    DateDisplay,
   },
   props: {
     update: {
@@ -59,5 +66,8 @@ export default {
   grid-row-gap: 1em;
   padding-left: 80px;
   margin-top: 100px;
+}
+.date {
+  margin-top: 70px;
 }
 </style>
