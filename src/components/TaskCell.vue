@@ -11,18 +11,18 @@
             id="rounded-card"
             :style="isClicked ? { 'background-color': '#969696' } : null"
           >
-            <div v-on:click="toggleIsClicked">
-              <img
-                v-bind:src="require(`../assets/${path}`)"
-                class="iconbutton"
-              />
+            <div
+              v-on:click="toggleIsClicked"
+              v-html="svg"
+              class="iconbutton"
+            >
             </div>
           </v-card>
         </template>
       </v-hover>
       <p
         class="title"
-        :style="isClicked ? { 'fontWeight': '600' } : { 'fontWeight': '200' }"
+        :style="isClicked ? { 'fontWeight': '900' } : { 'fontWeight': '500' }"
       >
         {{title}}
       </p>
@@ -37,6 +37,7 @@ export default {
     name: String,
     path: String,
     title: String,
+    svg: String,
     add: {
       type: Function,
     },
@@ -82,11 +83,11 @@ export default {
 }
 
 .iconbutton {
-  margin-top: 12px;
+  padding-top: 18px;
 }
 
 .title {
   margin-top: 10px;
-  font-variant-caps: small-caps;
+  font-variant-caps: all-small-caps;
 }
 </style>

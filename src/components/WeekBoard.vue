@@ -1,7 +1,9 @@
 <template>
+  <div>
   <h3>
     Semaine
   </h3>
+  </div>
 </template>
 
 <script>

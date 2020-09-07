@@ -10,6 +10,7 @@
         :path="item.filename"
         :title="item.title"
         :name="item.name"
+        :svg="item.svg"
         :add="addTasks"
         :remove="removeTasks"
       />
