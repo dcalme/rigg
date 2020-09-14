@@ -15,12 +15,21 @@
         :remove="removeTasks"
       />
   </div>
+  <div class="text-center">
+    <template v-if="overlay">
+      <SubmitModal
+        :overlay="this.overlay"
+        :data="tasks"
+      />
+    </template>
+  </div>
 </div>
 </template>
 
 <script>
 import TaskCell from './TaskCell.vue';
 import DateDisplay from './DateDisplay.vue';
+import SubmitModal from './SubmitModal.vue';
 import items from '../../tasks.json';
 
 export default {
@@ -28,11 +37,13 @@ export default {
   components: {
     TaskCell,
     DateDisplay,
+    SubmitModal,
   },
   props: {
     update: {
       type: Function,
     },
+    overlay: Boolean,
   },
   data() {
     return {

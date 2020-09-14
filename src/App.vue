@@ -7,6 +7,7 @@
     <router-view
       :update="updateTask"
       class="task_grid"
+      :overlay="this.overlay"
     />
   </div>
 </template>
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       tasks: [],
+      overlay: false,
     };
   },
   methods: {
@@ -29,7 +31,7 @@ export default {
       this.tasks = element;
     },
     submit() {
-      alert(this.tasks);
+      this.overlay = true;
     },
   },
 };

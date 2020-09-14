@@ -22,7 +22,7 @@
       </v-hover>
       <p
         class="title"
-        :style="isClicked ? { 'fontWeight': '900' } : { 'fontWeight': '500' }"
+        :style="isClicked ? { 'fontWeight': '600' } : { 'fontWeight': '100' }"
       >
         {{title}}
       </p>
@@ -89,5 +89,6 @@ export default {
 .title {
   margin-top: 10px;
   font-variant-caps: all-small-caps;
+  cursor: pointer;
 }
 </style>
