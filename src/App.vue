@@ -32,6 +32,9 @@ export default {
     },
     submit() {
       this.overlay = true;
+      this.$nextTick(() => {
+        console.log(this.overlay);
+      });
     },
   },
 };

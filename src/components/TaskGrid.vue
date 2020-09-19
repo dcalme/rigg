@@ -19,7 +19,7 @@
     <template v-if="overlay">
       <SubmitModal
         :overlay="this.overlay"
-        :data="tasks"
+        :tasks="tasks"
       />
     </template>
   </div>
@@ -54,7 +54,6 @@ export default {
   methods: {
     addTasks(element) {
       this.tasks.push(element);
-      this.update(this.tasks);
       this.$nextTick(() => {
         this.update(this.tasks);
       });

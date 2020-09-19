@@ -11,21 +11,9 @@
         class="overlay"
       >
         <div>
-          <v-card-title class="modalButton">
+          <v-card-title class="title">
             Sélection
           </v-card-title>
-        </div>
-        <div class="avatarContainer">
-          <div class="modalButton">
-            <span>
-              Darius
-            </span>
-          </div>
-          <div class="modalButton">
-            <span>
-              Justine
-            </span>
-          </div>
         </div>
         <div class="list">
           <v-list
@@ -34,29 +22,40 @@
             light
           >
             <v-list-item
-              v-for="(item, i) in this.data"
+              v-for="(item, i) in this.tasks"
               :key="i"
             >
               <v-list-item-content>
-                <v-list-item-title class="modalButton">{{item}}</v-list-item-title>
+                <v-list-item-title class="listItem">
+                  {{ item }}
+                </v-list-item-title>
+                <v-divider></v-divider>
               </v-list-item-content>
             </v-list-item>
           </v-list>
         </div>
-        <v-card-actions>
-          <v-btn
-            text
-            color="#212121"
-          >
-            Ok
-          </v-btn>
-          <v-btn
-            @click="active = false"
-            text
-            color="#212121"
-          >
-            Annuler
-          </v-btn>
+        <div class="selectContainer">
+          <NameSwitch :handler="handlingSelect"/>
+        </div>
+        <v-card-actions class="modalButtons">
+          <div class="buttons">
+            <v-btn
+              color="#1867C0"
+              outlined
+              @click="finalValidation"
+            >
+              Ok
+            </v-btn>
+          </div>
+          <div class="buttons">
+            <v-btn
+              @click="active = false"
+              color="#1867C0"
+              raised
+            >
+              Annuler
+            </v-btn>
+          </div>
         </v-card-actions>
       </v-card>
     </v-overlay>
@@ -64,39 +63,73 @@
 </template>
 
 <script>
+import NameSwitch from './NameSwitch.vue';
+
 export default {
   name: 'SubmitModal',
+  components: {
+    NameSwitch,
+  },
   props: {
     overlay: Boolean,
-    data: Array,
+    tasks: Array,
   },
-  computed: {
-    display() {
-      console.log(this.data);
-      return 0;
+  methods: {
+    handlingSelect(index) {
+      if (!this.status.includes(1)) { // select is empty
+        this.status[index] = 1;
+      } else if (this.status.includes(1) && this.status.findIndex(this.checkStatus) !== index) {
+        // select is re-assign
+        this.status = [0, 0];
+        this.status[index] = 1;
+      }
+    },
+    checkStatus(element) {
+      return element === 1;
+    },
+    finalValidation() {
+      console.log('into finalValidation');
     },
   },
   data() {
     return {
-      active: true,
+      active: this.overlay,
+      status: [0, 0],
     };
   },
 };
 </script>
 
 <style scoped>
+.listItem {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 .overlay {
   padding: 20px;
 }
-.modalButton {
-  color: #000;
-}
-.List {
-  background-color: #ffffff;
-}
-.avatarContainer {
+
+.selectContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.modalButtons {
+  margin-top: 30px;
+}
+
+.buttons {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.title {
+  color: #000;
 }
 </style>
