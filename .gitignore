@@ -2,6 +2,10 @@
 node_modules
 /dist
 replace.js
+profiles.json
+tasks.json
+canar.png
+shika.png
 
 
 # local env files
