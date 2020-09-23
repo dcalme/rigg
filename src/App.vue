@@ -8,6 +8,7 @@
       :update="updateTask"
       class="task_grid"
       :overlay="this.overlay"
+      :cancel="cancel"
     />
   </div>
 </template>
@@ -32,9 +33,9 @@ export default {
     },
     submit() {
       this.overlay = true;
-      this.$nextTick(() => {
-        console.log(this.overlay);
-      });
+    },
+    cancel() {
+      this.overlay = false;
     },
   },
 };

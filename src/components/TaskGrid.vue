@@ -18,8 +18,8 @@
   <div class="text-center">
     <template v-if="overlay">
       <SubmitModal
-        :overlay="this.overlay"
         :tasks="tasks"
+        :discard="cancel"
       />
     </template>
   </div>
@@ -30,7 +30,7 @@
 import TaskCell from './TaskCell.vue';
 import DateDisplay from './DateDisplay.vue';
 import SubmitModal from './SubmitModal.vue';
-import items from '../../tasks.json';
+import items from '../../data/tasks.json';
 
 export default {
   name: 'TaskGrid',
@@ -41,6 +41,9 @@ export default {
   },
   props: {
     update: {
+      type: Function,
+    },
+    cancel: {
       type: Function,
     },
     overlay: Boolean,

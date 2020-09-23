@@ -3,7 +3,6 @@
     <v-overlay
       opacity="0.99"
       color="#212121"
-      :value="active"
     >
       <v-card
         raised
@@ -41,15 +40,15 @@
           <div class="buttons">
             <v-btn
               color="#1867C0"
-              outlined
               @click="finalValidation"
+              :outlined="disp"
             >
               Ok
             </v-btn>
           </div>
           <div class="buttons">
             <v-btn
-              @click="active = false"
+              @click="discard"
               color="#1867C0"
               raised
             >
@@ -73,9 +72,13 @@ export default {
   props: {
     overlay: Boolean,
     tasks: Array,
+    discard: {
+      type: Function,
+    },
   },
   methods: {
     handlingSelect(index) {
+      this.disp = true;
       if (!this.status.includes(1)) { // select is empty
         this.status[index] = 1;
       } else if (this.status.includes(1) && this.status.findIndex(this.checkStatus) !== index) {
@@ -90,11 +93,17 @@ export default {
     finalValidation() {
       console.log('into finalValidation');
     },
+    isSelected() {
+      if (this.status.includes(0) === true) {
+        return true;
+      }
+      return false;
+    },
   },
   data() {
     return {
-      active: this.overlay,
       status: [0, 0],
+      disp: false,
     };
   },
 };

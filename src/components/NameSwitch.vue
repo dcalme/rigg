@@ -25,7 +25,7 @@
 
 <script>
 import ProfileIcon from './ProfileIcon.vue';
-import items from '../../profiles.json';
+import items from '../../data/profiles.json';
 
 export default {
   name: 'NameSwitch',
@@ -39,7 +39,7 @@ export default {
     ProfileIcon,
   },
   methods: {
-    // responsible for css background-color to chnage on click
+    // responsible for css background-color to change on click
     selectProfile(index) {
       this.selected = index;
     },
