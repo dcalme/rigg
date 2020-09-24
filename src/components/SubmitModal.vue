@@ -41,7 +41,7 @@
             <v-btn
               color="#1867C0"
               @click="finalValidation"
-              :outlined="disp"
+              :outlined="!disp"
             >
               Ok
             </v-btn>
@@ -91,7 +91,11 @@ export default {
       return element === 1;
     },
     finalValidation() {
-      console.log('into finalValidation');
+      if (this.disp) {
+        console.log('into finalValidation');
+      } else {
+        console.log('choose one profile');
+      }
     },
     isSelected() {
       if (this.status.includes(0) === true) {
@@ -113,8 +117,6 @@ export default {
 .listItem {
   color: #000;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   margin-left: 40px;
   margin-right: 40px;
 }
