@@ -11,7 +11,7 @@
       >
         <div>
           <v-card-title class="title">
-            Sélection
+            Séléction
           </v-card-title>
         </div>
         <div class="list">
@@ -98,10 +98,7 @@ export default {
       }
     },
     isSelected() {
-      if (this.status.includes(0) === true) {
-        return true;
-      }
-      return false;
+      return this.status.includes(0) === true;
     },
   },
   data() {
@@ -117,8 +114,13 @@ export default {
 .listItem {
   color: #000;
   display: flex;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+.list {
+  /* border: 1px solid black; */
+  margin-right: 80px;
 }
 
 .overlay {

@@ -1,5 +1,5 @@
 <template>
-  <div class="avatarContainer" @click="logStuff">
+  <div class="avatarContainer">
     <div>
       <v-avatar
         class="avatar"
@@ -14,11 +14,6 @@
 <script>
 export default {
   name: 'ProfileIcon',
-  methods: {
-    logStuff() {
-      console.log(this.img);
-    },
-  },
   props: {
     img: String,
   },

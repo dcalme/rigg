@@ -24,7 +24,7 @@
         class="title"
         :style="isClicked ? { 'fontWeight': '600' } : { 'fontWeight': '100' }"
       >
-        {{title}}
+        {{ title }}
       </p>
     </div>
   </v-container>
@@ -54,10 +54,10 @@ export default {
     toggleIsClicked() {
       if (this.isClicked) {
         this.isClicked = false;
-        this.remove(this.name);
+        this.remove(this.title);
       } else {
         this.isClicked = !this.isClicked;
-        this.add(this.name);
+        this.add(this.title);
       }
     },
   },
