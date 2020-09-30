@@ -4,16 +4,16 @@
     <DateDisplay/>
   </div>
   <div class="grid">
-      <TaskCell
-        v-for="item in items"
-        :key="item.id"
-        :path="item.filename"
-        :title="item.title"
-        :name="item.name"
-        :svg="item.svg"
-        :add="addTasks"
-        :remove="removeTasks"
-      />
+    <TaskCell
+      v-for="item in items"
+      :key="item.id"
+      :path="item.filename"
+      :title="item.title"
+      :name="item.name"
+      :svg="item.svg"
+      :add="addTasks"
+      :remove="removeTasks"
+    />
   </div>
   <div class="text-center">
     <template v-if="overlay">
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import TaskCell from './TaskCell.vue';
 import DateDisplay from './DateDisplay.vue';
 import SubmitModal from './SubmitModal.vue';
@@ -52,7 +53,14 @@ export default {
     return {
       items: items.tasks,
       tasks: [],
+      info: [],
     };
+  },
+  mounted() {
+    console.log('request');
+    axios.get('http://localhost:3000/')
+    // eslint-disable-next-line no-return-assign
+      .then((response) => (this.info = response));
   },
   methods: {
     addTasks(element) {
