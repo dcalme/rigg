@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import NameSwitch from './NameSwitch.vue';
 
 export default {
@@ -93,6 +94,13 @@ export default {
     finalValidation() {
       if (this.disp) {
         console.log('into finalValidation');
+        console.log(this.tasks);
+        axios.post('http://localhost:3000', {
+          tasks: this.tasks,
+        })
+          .then((response) => {
+            console.log('response', response);
+          });
       } else {
         console.log('choose one profile');
       }

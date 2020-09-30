@@ -10,12 +10,18 @@
 </template>
 
 <script>
+import axios from 'axios';
 import TableResult from './TableResult.vue';
 
 export default {
   name: 'WeekBoard',
   components: {
     TableResult,
+  },
+  mounted() {
+    console.log('WeekBoard mounted call');
+    axios.get('http://localhost:3000/week')
+      .then((response) => (console.log(response)));
   },
 };
 </script>

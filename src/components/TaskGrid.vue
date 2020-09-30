@@ -58,9 +58,9 @@ export default {
   },
   mounted() {
     console.log('request');
-    axios.get('http://localhost:3000/')
+    axios.get('http://192.168.1.48:3000/')
     // eslint-disable-next-line no-return-assign
-      .then((response) => (this.info = response));
+      .then((response) => (console.log(response)));
   },
   methods: {
     addTasks(element) {
