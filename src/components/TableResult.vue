@@ -15,6 +15,9 @@
 
 export default {
   name: 'TableResult',
+  props: {
+    list: Object,
+  },
   data: () => ({
     desserts: [
       {

@@ -4,7 +4,7 @@
     Semaine
   </h3>
   <div class="table">
-    <TableResult/>
+    <TableResult :list="table"/>
   </div>
   </div>
 </template>
@@ -18,10 +18,18 @@ export default {
   components: {
     TableResult,
   },
+  data() {
+    return {
+      table: [],
+    };
+  },
   mounted() {
-    console.log('WeekBoard mounted call');
-    axios.get('http://localhost:3000/week')
-      .then((response) => (console.log(response)));
+    axios.get('http://192.168.1.48:8000/week')
+      .then((response) => {
+        // console.log(response.data.Cuisine[0]);
+        // console.log(response.data.Cuisine[1]);
+        this.table = response.data;
+      });
   },
 };
 </script>

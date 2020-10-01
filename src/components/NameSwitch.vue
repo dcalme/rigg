@@ -42,6 +42,7 @@ export default {
     // responsible for css background-color to change on click
     selectProfile(index) {
       this.selected = index;
+      console.log(index);
     },
   },
   data() {

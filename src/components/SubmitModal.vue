@@ -79,6 +79,7 @@ export default {
   },
   methods: {
     handlingSelect(index) {
+      this.profile = index;
       this.disp = true;
       if (!this.status.includes(1)) { // select is empty
         this.status[index] = 1;
@@ -93,10 +94,9 @@ export default {
     },
     finalValidation() {
       if (this.disp) {
-        console.log('into finalValidation');
-        console.log(this.tasks);
-        axios.post('http://localhost:3000', {
-          tasks: this.tasks,
+        axios.post('http://192.168.1.48:8000', {
+          task: this.tasks,
+          profil: this.profile === 0 ? 'darius' : 'justine',
         })
           .then((response) => {
             console.log('response', response);
@@ -113,6 +113,7 @@ export default {
     return {
       status: [0, 0],
       disp: false,
+      profile: false,
     };
   },
 };
