@@ -7,9 +7,7 @@
     <TaskCell
       v-for="item in items"
       :key="item.id"
-      :path="item.filename"
-      :title="item.title"
-      :name="item.name"
+      :title="item.task_name"
       :svg="item.svg"
       :add="addTasks"
       :remove="removeTasks"
@@ -31,7 +29,6 @@ import axios from 'axios';
 import TaskCell from './TaskCell.vue';
 import DateDisplay from './DateDisplay.vue';
 import SubmitModal from './SubmitModal.vue';
-import items from '../../data/tasks.json';
 
 export default {
   name: 'TaskGrid',
@@ -51,16 +48,15 @@ export default {
   },
   data() {
     return {
-      items: items.tasks,
+      items: [],
       tasks: [],
-      info: [],
     };
   },
   mounted() {
-    console.log('request');
-    axios.get('http://192.168.1.48:3000/')
-    // eslint-disable-next-line no-return-assign
-      .then((response) => (console.log(response)));
+    axios.get('http://192.168.1.48:8000/')
+      .then((response) => {
+        this.items = response.data;
+      });
   },
   methods: {
     addTasks(element) {

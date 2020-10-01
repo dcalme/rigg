@@ -34,8 +34,6 @@
 export default {
   name: 'TaskCell',
   props: {
-    name: String,
-    path: String,
     title: String,
     svg: String,
     add: {
