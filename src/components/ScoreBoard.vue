@@ -1,6 +1,19 @@
 <template>
   <div>
-    Score
+
+  <div>
+  <v-list>
+    <v-list-item
+    v-for="(item, i) in this.profils"
+    :key="i"
+    >
+    <v-list-item-content>
+    {{ item.charAt(0).toUpperCase() + item.slice(1) }} :
+    {{ points[i]  + " pts"}}
+    </v-list-item-content>
+    </v-list-item>
+    </v-list>
+  </div>
   </div>
 </template>
 
@@ -8,7 +21,8 @@
 export default {
   name: 'ScoreBoard',
   props: {
-    scores: Array,
+    points: Array,
+    profils: Array,
   },
 };
 </script>

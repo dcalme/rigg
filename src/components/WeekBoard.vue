@@ -1,9 +1,11 @@
 <template>
   <div>
     <h3>
-      Semaine
+      Depuis 7 jours
     </h3>
-    <ScoreBoard/>
+    <div class="scoreContainer">
+      <ScoreBoard :points="points" :profils="profils"/>
+    </div>
     <div class="table">
       <TableResult :list="results"/>
     </div>
@@ -27,6 +29,7 @@ export default {
       tasks: [],
       profils: [],
       results: [],
+      points: [],
     };
   },
   mounted() {
@@ -42,7 +45,8 @@ export default {
 
     axios.get('http://192.168.1.48:8000/week')
       .then((response) => {
-        console.log(response.data[1]);
+        // eslint-disable-next-line prefer-destructuring
+        this.points = response.data[1];
         const { profils } = this;
         const { tasks } = this;
         const res = [];
@@ -90,5 +94,9 @@ h3 {
   margin-left: 150px;
   margin-right: 150px;
   margin-bottom: 100px;
+}
+.scoreContainer {
+  text-align: left;
+  margin-left: 150px;
 }
 </style>
