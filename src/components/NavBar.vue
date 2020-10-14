@@ -17,6 +17,9 @@
         <span class="header">
           <router-link to="/month">Mois</router-link>
         </span>
+        <span class="header">
+          <router-link to="/start">Debut</router-link>
+        </span>
       </div>
       <v-spacer></v-spacer>
       <SubmitButton
