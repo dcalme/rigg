@@ -3,4 +3,7 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   filenameHashing: false,
-}
+  devServer: {
+    port: 3000,
+  },
+};
