@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>
-      Depuis 7 jours
+      Depuis le début
     </h3>
     <div class="scoreContainer">
       <ScoreBoard :points="points" :profils="profils"/>
@@ -56,7 +56,7 @@ export default {
         this.headers = heads;
       });
 
-    axios.get('http://192.168.1.48:8000/week')
+    axios.get('http://192.168.1.48:8000/start')
       .then((response) => {
         // eslint-disable-next-line prefer-destructuring
         this.points = response.data[1];

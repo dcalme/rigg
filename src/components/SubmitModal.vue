@@ -38,13 +38,15 @@
         </div>
         <v-card-actions class="modalButtons">
           <div class="buttons">
-            <v-btn
-              color="#1867C0"
-              @click="finalValidation"
-              :outlined="!disp"
-            >
-              Ok
-            </v-btn>
+            <router-link to="/succeed">
+              <v-btn
+                color="#1867C0"
+                @click="finalValidation"
+                :outlined="!disp"
+              >
+                Ok
+              </v-btn>
+            </router-link>
           </div>
           <div class="buttons">
             <v-btn

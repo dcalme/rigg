@@ -14,20 +14,7 @@ export default {
   name: 'TableResult',
   props: {
     list: Array,
+    headers: Array,
   },
-  data: () => ({
-    headers: [
-      {
-        text: 'Taches ménagères',
-        align: 'start',
-        sortable: false,
-        value: 'name',
-      },
-      { text: 'Darius', value: 'darius' },
-      { text: 'Justine', value: 'justine' },
-      { text: 'Total', value: 'total' },
-      // { text: 'Dernière Fois', value: 'daysSince' },
-    ],
-  }),
 };
 </script>
