@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      ERROR 405
+      ERROR 404
     </h1>
     <p>
       No ressources were found at this adress.
