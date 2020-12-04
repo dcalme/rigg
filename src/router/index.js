@@ -8,6 +8,7 @@ import MonthBoard from '../components/MonthBoard.vue';
 import StartBoard from '../components/StartBoard.vue';
 import SuccesScreen from '../components/SuccesScreen.vue';
 import ErrorScreen from '../components/ErrorScreen.vue';
+import AdminBoard from '../components/AdminBoard.vue';
 
 Vue.use(Router);
 
@@ -19,6 +20,7 @@ export default new Router({
     { path: '/month', component: MonthBoard },
     { path: '/start', component: StartBoard },
     { path: '/succeed', component: SuccesScreen },
+    { path: '/admin', component: AdminBoard },
     { path: '/*', component: ErrorScreen },
   ],
 });
