@@ -37,6 +37,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import ProfileIcon from './ProfileIcon.vue';
 import items from '../../data/profiles.json';
 
@@ -58,9 +59,13 @@ export default {
   methods: {
     validate() {
       this.$refs.form.validate();
-      console.log('confirm new user');
-      console.log(this.firstname);
-      console.log(this.profileimg);
+      axios.post('http://192.168.1.48:8000/create_user', {
+        name: this.firstname,
+        img: this.profileimg,
+      })
+        .then((response) => {
+          console.log('response', response);
+        });
     },
   },
 };
