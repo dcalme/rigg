@@ -1,7 +1,9 @@
 <template>
-   <div id="chart">
-        <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-      </div>
+  <div>
+    <div>
+      <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
+    </div>
+  </div>
 </template>
 <script>
 import axios from 'axios';
@@ -11,20 +13,13 @@ export default {
   mounted() {
     axios.get('http://localhost:8000/monthEvolution')
       .then((response) => {
-        this.period = response.data.map((element) => element.date);
-        this.score = response.data.map((element) => parseInt(element.score, 10));
-        console.log(this.period);
-        console.log(this.score);
+        this.period = response.data[0].period;
+        this.score = response.data.map((element) => element);
       });
   },
   computed: {
     series() {
-      return [
-        {
-          name: 'Desktops',
-          data: this.score,
-        },
-      ];
+      return this.score;
     },
     chartOptions() {
       return {
@@ -36,7 +31,7 @@ export default {
           },
         },
         dataLabels: {
-          enabled: false,
+          enabled: true,
         },
         stroke: {
           curve: 'straight',
