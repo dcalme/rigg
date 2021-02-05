@@ -9,6 +9,9 @@
     <div class="table">
       <TableResult :list="results" :headers="headers"/>
     </div>
+    <div class="table">
+      <PeriodStats/>
+    </div>
   </div>
 </template>
 
@@ -16,12 +19,14 @@
 import axios from 'axios';
 import TableResult from './TableResult.vue';
 import ScoreBoard from './ScoreBoard.vue';
+import PeriodStats from './PeriodStats.vue';
 
 export default {
   name: 'WeekBoard',
   components: {
     TableResult,
     ScoreBoard,
+    PeriodStats,
   },
   data() {
     return {
